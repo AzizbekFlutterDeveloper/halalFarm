@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:halol_farm/code/constans/colors_consts.dart';
 import 'package:halol_farm/code/constans/size_config.dart';
+import 'package:halol_farm/screens/home_page/widget/animaladd_container.dart';
+import 'package:halol_farm/screens/home_page/widget/container_add.dart';
+import 'package:halol_farm/screens/home_page/widget/container_myanimal.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,42 +13,129 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return CupertinoPageScaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ConsColors.green,
       child: CustomScrollView(
-        
         physics: ScrollPhysics(),
         slivers: [
           SliverAppBar(
-            toolbarHeight: getHeight(313),
+            toolbarHeight: getHeight(230),
             backgroundColor: ConsColors.green,
+            flexibleSpace: Column(
+              children: [
+                SizedBox(height: getHeight(48)),
+                SizedBox(
+                  height: getHeight(29),
+                  width: getWidth(100),
+                  child: Image.asset("assets/image/halalForm.png"),
+                ),
+                SizedBox(height: getHeight(32)),
+                Text(
+                  "Balansingiz",
+                  style: TextStyle(
+                    fontSize: getWidth(14),
+                    color: Color(0xffCDE9D1),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.add_circle_outline_outlined,
+                          size: getHeight(24),
+                          color: Colors.white,
+                        )),
+                    Text(
+                      "450 000",
+                      style: TextStyle(
+                        fontSize: getHeight(21),
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      " so'm",
+                      style: TextStyle(
+                        fontSize: getHeight(17),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  "Hisobni to’ldirish uchun ID: 255 584 789",
+                  style: TextStyle(color: Color(0xffCDE9D1)),
+                ),
+              ],
+            ),
           ),
           SliverToBoxAdapter(
             child: Container(
+              alignment: Alignment(-0.5, 0.1),
               height: getHeight(77),
-              color: ConsColors.green,
-              child: Container(
-                height: getHeight(77),
+              width: getWidth(375),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
-                color: Colors.white,
-
+                color: Color(0xffF2F1F7),
               ),
+              child: Text(
+                "Mening hayvonlarim (2)",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: getWidth(24),
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-              
             ),
           ),
           SliverGrid(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1, mainAxisExtent: getHeight(727)),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Container(
+                  color: Color(0xffF2F1F7),
+                  child: ContainerMyAnimal(),
+                );
+              },
+              childCount: 2,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: getHeight(160),
+              width: getWidth(375),
+              color: Color(0xffF2F1F7),
+              child: Padding(
+                padding:  EdgeInsets.all(getWidth(8)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ContainerAdd(
+                      name: "+ " + "Yangi hayvon sotib olish",
+                    ),
+                    SizedBox(height: getHeight(64)),
+                    Text("Sizga yoqishi mumkin",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: getWidth(24),
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ),
+
+          ),
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,mainAxisExtent: getHeight(378)),
             delegate: SliverChildBuilderDelegate(
               (context, index){
-                return Container(
-                  margin: EdgeInsets.all(8),
-                  height: 300,
-                  color: Colors.amber,
-                );
+                return Container(color: Color(0xffF2F1F7),child: AnimalAddContainer());
               }
-            ), 
-            
+            ),
           ),
         ],
       ),
