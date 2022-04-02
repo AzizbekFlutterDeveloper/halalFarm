@@ -169,56 +169,61 @@ class ContainerMyAnimal extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      SizedBox(height: getHeight(20)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CircleAvatar(
-                            radius: getHeight(23),
-                            backgroundImage:
-                                const AssetImage("assets/image/Ellipse 4 (1).png"),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Beda (58%)",
-                                style: TextStyle(
-                                  fontSize: getWidth(16),
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
+                  return GestureDetector(
+                    child: Column(
+                      children: [
+                        SizedBox(height: getHeight(20)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CircleAvatar(
+                              radius: getHeight(23),
+                              backgroundImage:
+                                  const AssetImage("assets/image/Ellipse 4 (1).png"),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Bug’doy (58%)",
+                                  style: TextStyle(
+                                    fontSize: getWidth(16),
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: getHeight(10)),
-                                height: getHeight(10),
-                                width: getWidth(247),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius:
-                                      const BorderRadius.all(Radius.circular(10)),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      height: getHeight(9),
-                                      width: getWidth(152),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            const BorderRadius.all(Radius.circular(10)),
-                                        color: ConsColors.green,
+                                Container(
+                                  margin: EdgeInsets.only(top: getHeight(10)),
+                                  height: getHeight(10),
+                                  width: getWidth(247),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey),
+                                    borderRadius:
+                                        const BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        height: getHeight(9),
+                                        width: getWidth(152),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              const BorderRadius.all(Radius.circular(10)),
+                                          color: ConsColors.green,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    onTap: (){
+                      Navigator.pushNamed(context, '/harid');
+                    },
                   );
                 },
               ),
