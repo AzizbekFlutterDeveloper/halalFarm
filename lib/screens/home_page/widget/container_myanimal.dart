@@ -69,22 +69,27 @@ class ContainerMyAnimal extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: getHeight(46),
-              width: getWidth(319),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text(
-                  "Dori sotib olish",
-                  style: TextStyle(
-                    fontSize: getHeight(15),
-                    color: const Color(0xff262B27),
+            GestureDetector(
+              child: Container(
+                height: getHeight(46),
+                width: getWidth(319),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                ),
+                child: Center(
+                  child: Text(
+                    "Dori sotib olish",
+                    style: TextStyle(
+                      fontSize: getHeight(15),
+                      color: const Color(0xff262B27),
+                    ),
                   ),
                 ),
               ),
+              onTap: (){
+                Navigator.pushNamed(context, '/harid_dori');
+              },
             ),
             SizedBox(height: getHeight(24)),
             Row(

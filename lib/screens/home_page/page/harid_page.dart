@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:halol_farm/code/constans/size_config.dart';
 import 'package:halol_farm/code/widget/contaiener_buttom.dart';
 import 'package:halol_farm/screens/home_page/widget/error_buy_container.dart';
+import 'package:halol_farm/screens/home_page/widget/harid_appbar.dart';
 import 'package:halol_farm/screens/home_page/widget/my_balans_container.dart';
 
 class HaridPage extends StatelessWidget {
@@ -15,42 +16,7 @@ class HaridPage extends StatelessWidget {
       backgroundColor: Colors.white,
       child: Column(
         children: [
-          Container(
-            height: getHeight(65),
-            width: getWidth(375),
-            color: const Color.fromARGB(255, 233, 231, 231),
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: getWidth(38),
-                right: getWidth(12),
-                left: getWidth(12),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("  "),
-                  Text(
-                    "Yemish xarid qilish",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: getWidth(18),
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  GestureDetector(
-                    child: Icon(
-                      Icons.cancel_outlined,
-                      color: Colors.black,
-                      size: getHeight(22),
-                    ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
+          HaridAppBar(name: "Yemish xarid qilish"),
           Container(
             height: getHeight(280),
             width: getWidth(375),
@@ -58,7 +24,7 @@ class HaridPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("assets/image/Rectangle 5630.png")),
+                  image: AssetImage("assets/image/bugdoy.png")),
             ),
             child: const MyBalanContainer(),
           ),
@@ -153,6 +119,9 @@ class HaridPage extends StatelessWidget {
                     ContainerButton(
                       top: getHeight(50),
                       name: "Sotib olish",
+                      onTap: (){
+                        Navigator.pushNamed(context, '/harid_tas');
+                      },
                     ),
                   ],
                 ),

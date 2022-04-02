@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:halol_farm/screens/home_page/page/dori_harid_page.dart';
 import 'package:halol_farm/screens/home_page/page/harid_page.dart';
+import 'package:halol_farm/screens/home_page/page/harid_tastiqlash_page.dart';
 import 'package:halol_farm/screens/home_page/page/home_page.dart';
 import 'package:halol_farm/screens/lang_page/lang_view/page/splash_page.dart';
 import 'package:halol_farm/screens/lang_page/lang_view/view/lang_viewt.dart';
@@ -26,6 +28,10 @@ class MyRouter{
         return MaterialPageRoute(builder: (_) => const HomePage());
       case '/harid':
         return MaterialPageRoute(builder: (_) => const HaridPage());
+      case '/harid_tas':
+        return MaterialPageRoute(builder: (_) => const HaridTastiqlashPage());
+       case '/harid_dori':
+        return MaterialPageRoute(builder: (_) => const DoriHaridPage());
     }
     return null;
   }
