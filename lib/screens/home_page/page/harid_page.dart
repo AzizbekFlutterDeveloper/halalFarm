@@ -120,7 +120,7 @@ class HaridPage extends StatelessWidget {
                       top: getHeight(50),
                       name: "Sotib olish",
                       onTap: (){
-                        Navigator.pushNamed(context, '/harid_tas');
+                        Navigator.pushNamed(context, '/harid_tas',arguments: ["5 kg bug’doy 9 000 so’mga muvaffaqiyatli xarid qilindi","Buncha bug’doy hayvoningiz uchun 4 kunga yetadi"]);
                       },
                     ),
                   ],

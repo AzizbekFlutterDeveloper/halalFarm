@@ -6,7 +6,8 @@ import 'package:halol_farm/code/widget/contaiener_buttom.dart';
 import 'package:halol_farm/screens/home_page/widget/harid_appbar.dart';
 
 class HaridTastiqlashPage extends StatelessWidget {
-  const HaridTastiqlashPage({ Key? key }) : super(key: key);
+  final List? name;
+  const HaridTastiqlashPage({ Key? key,required this.name }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class HaridTastiqlashPage extends StatelessWidget {
             height: getHeight(60),
             width: getWidth(335),
             child: Center(
-              child: AutoSizeText("5 kg bug’doy 9 000 so’mga muvaffaqiyatli xarid qilindi",
+              child: AutoSizeText(name![0] ?? "",
               textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
@@ -42,7 +43,7 @@ class HaridTastiqlashPage extends StatelessWidget {
             height: getHeight(40),
             width: getWidth(335),
             child: Center(
-              child: AutoSizeText("Buncha bug’doy hayvoningiz uchun 4 kunga yetadi",
+              child: AutoSizeText(name![1] ?? "",
               textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,

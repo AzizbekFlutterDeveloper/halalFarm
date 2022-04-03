@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:halol_farm/code/constans/colors_consts.dart';
 import 'package:halol_farm/code/constans/size_config.dart';
+import 'package:halol_farm/screens/home_page/widget/buttom_dori_.dart';
 
 class ContainerMyAnimal extends StatelessWidget {
   const ContainerMyAnimal({Key? key}) : super(key: key);
@@ -32,15 +33,20 @@ class ContainerMyAnimal extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Container(
-              height: getHeight(194),
-              width: getWidth(319),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-                image: DecorationImage(
-                  image: AssetImage("assets/image/animal pic.png"),
+            GestureDetector(
+              child: Container(
+                height: getHeight(194),
+                width: getWidth(319),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  image: DecorationImage(
+                    image: AssetImage("assets/image/animal pic.png"),
+                  ),
                 ),
               ),
+              onTap: (){
+                Navigator.pushNamed(context, '/animal_in');
+              },
             ),
             SizedBox(
               height: getHeight(74),
@@ -69,28 +75,7 @@ class ContainerMyAnimal extends StatelessWidget {
                 ],
               ),
             ),
-            GestureDetector(
-              child: Container(
-                height: getHeight(46),
-                width: getWidth(319),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                ),
-                child: Center(
-                  child: Text(
-                    "Dori sotib olish",
-                    style: TextStyle(
-                      fontSize: getHeight(15),
-                      color: const Color(0xff262B27),
-                    ),
-                  ),
-                ),
-              ),
-              onTap: (){
-                Navigator.pushNamed(context, '/harid_dori');
-              },
-            ),
+            ButtomDori(),
             SizedBox(height: getHeight(24)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

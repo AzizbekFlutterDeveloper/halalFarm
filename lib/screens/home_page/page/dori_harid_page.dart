@@ -71,8 +71,11 @@ class DoriHaridPage extends StatelessWidget {
                   ),
                 ),
                 ContainerButton(
-                  top: getHeight(39),
+                  top: getHeight(89),
                   name: "Sotib olish",
+                  onTap: (){
+                    Navigator.pushNamed(context, '/harid_tas', arguments: ["Furosemid (ukol) 23 000 so’mga xarid qilindi","12 soat ichida dori vositasi hayvoningizga yuboriladi. "]);
+                  },
                 ),
               ],
             ),

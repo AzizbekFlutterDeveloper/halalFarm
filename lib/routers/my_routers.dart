@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:halol_farm/screens/home_page/page/animal_inner_page.dart';
 import 'package:halol_farm/screens/home_page/page/dori_harid_page.dart';
 import 'package:halol_farm/screens/home_page/page/harid_page.dart';
 import 'package:halol_farm/screens/home_page/page/harid_tastiqlash_page.dart';
@@ -29,9 +30,11 @@ class MyRouter{
       case '/harid':
         return MaterialPageRoute(builder: (_) => const HaridPage());
       case '/harid_tas':
-        return MaterialPageRoute(builder: (_) => const HaridTastiqlashPage());
-       case '/harid_dori':
+        return MaterialPageRoute(builder: (_) =>  HaridTastiqlashPage(name: (args as List),));
+      case '/harid_dori':
         return MaterialPageRoute(builder: (_) => const DoriHaridPage());
+       case '/animal_in':
+        return MaterialPageRoute(builder: (_) => const AnimalInnerPage());
     }
     return null;
   }
