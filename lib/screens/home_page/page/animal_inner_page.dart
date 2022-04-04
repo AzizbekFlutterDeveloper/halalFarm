@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:halol_farm/code/constans/size_config.dart';
 import 'package:halol_farm/code/widget/app_bar.dart';
 import 'package:halol_farm/screens/home_page/widget/buttom_dori_.dart';
+import 'package:halol_farm/screens/home_page/widget/chip_container.dart';
 
 class AnimalInnerPage extends StatelessWidget {
   const AnimalInnerPage({Key? key}) : super(key: key);
@@ -79,6 +81,15 @@ class AnimalInnerPage extends StatelessWidget {
                     ],
                   ),
                   ButtomDori(),
+                  Row(
+                    children: [
+                      ChipContainer(
+                        icon: SvgPicture.asset(
+                            "assets/icon/Vector.svg"),
+                        text: "8 oylik",
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

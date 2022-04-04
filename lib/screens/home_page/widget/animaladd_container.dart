@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:halol_farm/code/constans/size_config.dart';
 
 class AnimalAddContainer extends StatelessWidget {
-  const AnimalAddContainer({Key? key}) : super(key: key);
+  final imageHeight;
+  final imageWidht;
+  final textSize;
+  final titleSize;
+  const AnimalAddContainer({Key? key, this.imageHeight, this.imageWidht,this.textSize, this.titleSize}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.all(getWidth(8)),
-        height: getHeight(378),
-        width: getWidth(359),
+        height: getHeight(172),
+        width: getWidth(256),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15)),
           color: Colors.white,
@@ -19,8 +23,8 @@ class AnimalAddContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: getHeight(278),
-              width: getWidth(359),
+              height: imageHeight ?? getHeight( 278),
+              width: imageWidht ?? getWidth( 359),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(15),
@@ -32,14 +36,14 @@ class AnimalAddContainer extends StatelessWidget {
               ),
             ),
            Padding(
-             padding: EdgeInsets.all(getWidth(20)),
+             padding: EdgeInsets.all(getWidth(10)),
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
                   Text("Qorabayir toy · 3 oylik",
                 style: TextStyle(
                   color: Color(0xff3E423F),
-                  fontSize: getWidth(16),
+                  fontSize: titleSize?? getWidth(16),
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -49,7 +53,7 @@ class AnimalAddContainer extends StatelessWidget {
                   Text("3 250 000",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: getWidth(26),
+                      fontSize: textSize?? getWidth(26),
                       fontWeight: FontWeight.w600,
                     ),
                   ),
